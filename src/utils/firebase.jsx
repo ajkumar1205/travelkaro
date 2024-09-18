@@ -1,14 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDkxuW2elQIV0BnJlo8Rn9YdC4xpzW0QS8",
-    authDomain: "thetravelkaro-db.firebaseapp.com",
-    projectId: "thetravelkaro-db",
-    storageBucket: "thetravelkaro-db.appspot.com",
-    messagingSenderId: "168556512930",
-    appId: "1:168556512930:web:8dcabe80330e1d03b679fb",
-    measurementId: "G-LRY13F8PD0"
+    apiKey: dotenv.API_KEY,
+    authDomain: dotenv.AUTH_DOMAIN,
+    projectId: dotenv.PROJECT_ID,
+    storageBucket: dotenv.STORAGE_BUCKET,
+    messagingSenderId: dotenv.MESSAGE_SENDER_ID,
+    appId: dotenv.APP_ID,
+    measurementId: dotenv.MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
