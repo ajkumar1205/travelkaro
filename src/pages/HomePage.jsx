@@ -50,7 +50,18 @@ export const HomePage = () => {
     return (
         <div className="font-sans">
             {/* Header */}
-            <Header />
+            {/* <Header /> */}
+            <header className="p-4 flex flex-col md:flex-row items-center justify-between">
+                <div className="w-full md:w-1/3 mb-4 md:mb-0 flex justify-center items-center">
+                    <img src={logo} alt="TheTravelKaro" className="w-16 h-16" />
+                    <h1 className="text-2xl font-bold text-red-500">TheTravelKaro</h1>
+                </div>
+                <nav className="w-full md:w-2/3 hidden md:flex uppercase justify-center items-center gap-2 lg:gap-6 text-xs lg:text-sm font-bold flex-wrap">
+                    {['home', 'about us', 'top destinations', 'contact us'].map((item) => (
+                        <a key={item} href="#" className="hover:border-b-2 hover:border-yellow-500 hover:pb-2">{item}</a>
+                    ))}
+                </nav>
+            </header>
 
             {/* Main Content */}
             <main className="px-4 md:px-8 lg:px-20">
@@ -89,11 +100,20 @@ export const HomePage = () => {
                 </section>
             </main>
 
+            <a
+                href="https://wa.me/919212939382"  // Replace with your WhatsApp number
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-4 right-4 bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 transition-colors duration-300 z-50"
+            >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/archive/6/6b/20220228223902%21WhatsApp.svg" alt="Send Text" height={"50px"} width={"50px"} />
+            </a>
+
             {/* Footer */}
             <footer className="bg-gray-700 text-white">
                 <div className="px-4 py-8 md:px-8 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-white">
                     {[
-                        { title: "CONTACT US", items: ["3rd Floor, Bhagwan Sahai Tower, Noida (Uttar Pradesh) - 201301", "+91 9996527033, 8527322377", "info@thetravelkaro.com"] },
+                        { title: "CONTACT US", items: ["Rz-95, Ground Floor, B Block, Veer Nagar, West Sagarpur, New Delhi - 110046", "+91 9212939382", "info@the-travelkaro.com"] },
                         { title: "INFORMATION", items: ["Cancellation Policy", "Travel News", "Terms and Conditions", "Privacy Policy", "User Agreement"] },
                         { title: "OUR MENU", items: ["Home", "About Us", "Top Destinations", "Contact Us"] },
                     ].map((section, index) => (
